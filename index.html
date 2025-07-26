@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title>SEND FORM TO TELEGRAM</title>
-    </head>
-    <body>
-        <div class="wrapper">
-            <main>
-                <form action="#" class="form">
-                    <input required type="text" name="ناو" placeholder="ناوی قوتابی " class="form__input">
-                    <input required type="date" name="تەمەن" placeholder="ژمارەی مۆبایل" class="form__input">
-                    <input required type="number" name="پۆل" placeholder="پۆل" class="form__input">
-                    <input required type="text" name="PHONE" placeholder=" ژمارەی مۆبایل " class="form__input">
-                    <textarea required name="تێبینی" placeholder="تێبینی" class="form__input"></textarea>
-                    <button class="form__button" type="submit">SEND</button>
-                </form>
-            </main>
-        </div>
-        <script src="js/script.js"></script>
-    </body>
-</html>
+<html lang="ku">
+<head>
+    <meta charset="UTF-8">
+    <title>فۆڕمی تۆمارکردنی قوتابی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="process.php" method="POST" onsubmit="return validateForm()">
+        <h2>فۆڕمی تۆمارکردنی قوتابی</h2>
 
+        <label for="name">ناوی قوتابی:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="mobile">ژمارەی مۆبایل:</label>
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{11}" placeholder="07XXXXXXXXX">
+
+        <label for="dob">بەرواری لەدایکبوون:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="school">ناوی قوتابخانە:</label>
+        <input type="text" id="school" name="school" required>
+
+        <button type="submit">ناردن</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
